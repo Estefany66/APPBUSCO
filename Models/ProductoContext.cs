@@ -8,5 +8,6 @@ namespace APPBUSCO.Models
         public ProductoContext(DbContextOptions dco) : base(dco) {
             
         }
+
     }
 }

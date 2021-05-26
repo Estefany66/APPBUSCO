@@ -1,0 +1,48 @@
+@model List<Producto>
+
+<h1>Lista de Productos</h1>
+
+<table class="table border">
+    <tr>
+        <th>Id</th>
+        <th>Nombre de producto</th>
+        <th>url</th>
+        <th>Descripcion</th>
+        <th>Precio</th>
+        <th>Celular</th>
+        <th>Lugar de compran</th>
+        <th>Nombre del Comprador</th>
+    </tr>
+    <!--Item para cada Producto-->
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Nombre_del_Producto</td>
+            <td>@item.Url_Producto </td>
+            <td>@item.Descripcion </td>
+            <td>@item.Precio </td>
+            <td>@item.Celular  </td>
+            <td>@item.Lugar_De_Compra</td>
+            <td>@item.Nombre</td>
+
+            <td>
+               <a href="/solicitudes/editarproducto/@item.Id" class="btn btn-secondary">Editar</a>
+    
+            <form action="/solicitudes/borrarproducto" method="POST" class="d-inline-block">
+            <button class="btn btn-danger">Borrar</button>
+            <input type="hidden" name="id" value="@item.Id" />
+            </form>
+            </td>
+            
+        </tr>
+    }
+
+     @if (Model.Count == 0) {
+        <tr>
+            <td colspan="4" class="text-center">No se encontraron productos</td>
+        </tr>
+        }
+    
+</table>
+<a href="/ubicaciones/nuevaregion/" class="btn btn-primary">Añadir Region</a>

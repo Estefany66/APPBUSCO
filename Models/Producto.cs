@@ -16,5 +16,10 @@ namespace APPBUSCO.Models
         public string Lugar_De_Compra { get; set; }
 
         public string Nombre { get; set; } 
+
+        
+        public  Categoria Categoria { get; set; }
+
+        public int CategoriaId {get; set;}
     }
 }
